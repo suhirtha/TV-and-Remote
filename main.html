@@ -18,6 +18,41 @@
 					var slider = new Slider('#bright-slide');
 					var slider = new Slider('#contrast-slide');
 					var slider = new Slider('#color-slide');
+					function ProgChange(count){
+						switch(count){
+						case 17:
+						$('.channel-img').css("background-image","url(img/channel1.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						case 18:
+						$('.channel-img').css("background-image","url(img/channel2.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						case 19:
+						$('.channel-img').css("background-image","url(img/channel3.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						case 20:
+						$('.channel-img').css("background-image","url(img/channel7.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						case 21:
+						$('.channel-img').css("background-image","url(img/channel6.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						case 30:
+						$('.channel-img').css("background-image","url(img/channel5.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						case 2:
+						$('.channel-img').css("background-image","url(img/channel4.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						case 13:
+						$('.channel-img').css("background-image","url(img/channel9.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						case 16:
+						$('.channel-img').css("background-image","url(img/channel8.png)").css("background-repeat","no-repeat") .css("background-size","100%");
+						break;
+						default:
+						$('.channel-img').hide();
+						break;
+					}
+				}
+				
 				$('.power').click(function(){
 					$('.power-switch').toggle();
 						if ($("#pow").is(":hidden")) {
@@ -29,163 +64,93 @@
 				});
 				
 				$('.prog-up').click(function(){
-				$('.channel-img').show();
-				count++;
-				$('.channel').text(count);
-				switch(count){
-					case 17:
-					$('.channel-img').css("background-image","url(img/channel1.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 18:
-					$('.channel-img').css("background-image","url(img/channel2.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 19:
-					$('.channel-img').css("background-image","url(img/channel3.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 20:
-					$('.channel-img').css("background-image","url(img/channel7.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 21:
-					$('.channel-img').css("background-image","url(img/channel6.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 30:
-					$('.channel-img').css("background-image","url(img/channel5.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 2:
-					$('.channel-img').css("background-image","url(img/channel4.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 13:
-					$('.channel-img').css("background-image","url(img/channel9.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 16:
-					$('.channel-img').css("background-image","url(img/channel8.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					default:
-					$('.channel-img').hide();
-					break;
-				}
-			});
-			$('.prog-down').click(function(){
-				$('.channel-img').show();
-				count--;
-				$('.channel').text(count);
-				switch(count){
-					case 17:
-					$('.channel-img').css("background-image","url(img/channel1.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 18:
-					$('.channel-img').css("background-image","url(img/channel2.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 19:
-					$('.channel-img').css("background-image","url(img/channel3.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 20:
-					$('.channel-img').css("background-image","url(img/channel7.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 21:
-					$('.channel-img').css("background-image","url(img/channel6.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 30:
-					$('.channel-img').css("background-image","url(img/channel5.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 2:
-					$('.channel-img').css("background-image","url(img/channel4.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 13:
-					$('.channel-img').css("background-image","url(img/channel9.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					case 16:
-					$('.channel-img').css("background-image","url(img/channel8.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-					break;
-					default:
-					$('.channel-img').hide();
-					break;
-				}
-			});
+					$('.channel-img').show();
+					count++;
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('.prog-down').click(function(){
+					$('.channel-img').show();
+					count--;
+					ProgChange(count);
+					$('.channel').text(count);
+				});
 
-			$('.vol-up').click(function() {
-				$('.volume').fadeIn() .css("background-color","#0000ff") .animate({width:'+=10px'}, 'fast',function(){
-							setTimeout(function() {
-  				$('.volume').fadeOut('fast');}, 2000);
-			});
-			});	
-			$('.vol-down').click(function() {
-				$('.volume').fadeIn() .css("background-color","#0000ff") .animate({width:'-=10px'}, 'fast',function(){
-							setTimeout(function() {
-  				$('.volume').fadeOut('fast');}, 2000);
-				$('.speak').attr('src', 'img/speaker1.png');
+				$('.vol-up').click(function() {
+					$('.volume').fadeIn() .css("background-color","#0000ff") .animate({width:'+=10px'}, 'fast',function(){
+								setTimeout(function() {
+	  				$('.volume').fadeOut('fast');}, 2000);
+				});
+				});	
+				$('.vol-down').click(function() {
+					$('.volume').fadeIn() .css("background-color","#0000ff") .animate({width:'-=10px'}, 'fast',function(){
+								setTimeout(function() {
+	  				$('.volume').fadeOut('fast');}, 2000);
+					$('.speak').attr('src', 'img/speaker1.png');
+					});
+				});
+
+				$('.all-prog').click(function(){
+					$('.menu').toggle();
+				});	
+				$('#ch-star').click(function(){
+					count=17
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('#ch-nat').click(function(){
+					count=18
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('#ch-anime').click(function(){
+					count=19
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('#ch-hbo').click(function(){
+					count=16;
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('#ch-star-act').click(function(){
+					count=13;
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('#ch-rom').click(function(){
+					count=2;
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('#ch-mov').click(function(){
+					count=30;
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('#ch-dis').click(function(){
+					count=20;
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('#ch-pogo').click(function(){
+					count=21;
+					$('.menu').hide();
+					ProgChange(count);
+					$('.channel').text(count);
+				});
+				$('.setting').click(function(){
+					$('.settings').toggle();
 				});
 			});
-
-			$('.all-prog').click(function(){
-				$('.menu').toggle();
-			});	
-			$('#ch-star').click(function(){
-				count=17
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel1.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-			});
-			$('#ch-nat').click(function(){
-				count=18
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel2.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-			});
-			$('#ch-anime').click(function(){
-				count=19
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel3.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-			});
-			$('#ch-hbo').click(function(){
-				count=16;
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel8.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-			});
-			$('#ch-star-act').click(function(){
-				count=13;
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel9.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-				
-			});
-			$('#ch-rom').click(function(){
-				count=2;
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel4.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-				
-			});
-			$('#ch-mov').click(function(){
-				count=30;
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel5.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-				
-			});
-			$('#ch-dis').click(function(){
-				count=20;
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel7.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-				
-			});$('#ch-pogo').click(function(){
-				count=21;
-				$('.menu').hide();
-				$('.channel').text(count);
-				$('.channel-img').show().css("background-image","url(img/channel6.png)").css("background-repeat","no-repeat") .css("background-size","100%");
-				
-			});
-
-
-
-
-			$('.setting').click(function(){
-				$('.settings').toggle();
-			});
-		});
 	</script>
 </head>
 <body>
@@ -215,8 +180,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<a id="ch-star-act" href="#">Star movies Action</a>
-						
-					</div>
+				</div>
 					<div class="col-md-4">
 						<a id="ch-rom" href="#">Romedy</a>
 					</div>
@@ -249,7 +213,6 @@
 				</li>
 				</ul>
 			</div>
-
 			<div class="channel"></div>
 			<div class="channel-img"></div>
 			<div class="volume"></div>
