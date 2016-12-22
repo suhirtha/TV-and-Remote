@@ -1,5 +1,5 @@
 body{
-	background-image:url('img/plant.png'),url('img/fireplace.gif'), url('img/speaker.png'),url('img/room.jpg');
+	background-image:url('../img/plant.png'),url('../img/fireplace.gif'), url('../img/speaker.png'),url('../img/room.jpg');
 	background-size: 15%,30%,15%,cover;
 	background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
 	background-position: left bottom,bottom,right bottom,center;
@@ -17,7 +17,8 @@ body{
 	position: absolute;
 	top:60px;
 	right: 240px;
-}
+} 
+/*Tv starts from here*/
 .tv{
 	height:250px;
 	width:400px;
@@ -55,11 +56,14 @@ body{
 	display: none;
 }
 .row a{
+	text-decoration: none;
 	display: block;
 	margin: 10px;
 }
 .settings{
 	display: none;
+	color:#66a3ff;
+	background-color: rgba(148, 148, 184,0.2);
 }
 .settings ul{
 list-style-type:none;
@@ -93,7 +97,8 @@ padding: 0;
 	bottom:5px;
 	height:10px;
 	width: 250px;
-}
+} 
+/*Remote settings starts from here*/
 .remote{
 	border:5px solid #3a3a3a;
 	padding-top:1x;

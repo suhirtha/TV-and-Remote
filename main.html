@@ -2,19 +2,22 @@
 <html>
 <head>
 	<title> | TV- Remote |</title>
-	<link rel="stylesheet" type="text/css" href="imp.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.4/css/bootstrap-slider.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<script  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.4/bootstrap-slider.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/imp.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-slider.min.css">
+	<script  src="js/bootstrap-slider.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	
 	
 	<script>
 		$(document).ready(function(){		
 				$('#rem').draggable();
 					var count = 15;
+					var slider = new Slider('#bright-slide');
+					var slider = new Slider('#contrast-slide');
+					var slider = new Slider('#color-slide');
 				$('.power').click(function(){
 					$('.power-switch').toggle();
 						if ($("#pow").is(":hidden")) {
@@ -22,10 +25,9 @@
 						  } 
 						else {
 						    $('.speak').attr('src', 'img/speaker.gif');
-						}
-					
+						}		
 				});
-			
+				
 				$('.prog-up').click(function(){
 				$('.channel-img').show();
 				count++;
@@ -182,18 +184,6 @@
 
 			$('.setting').click(function(){
 				$('.settings').toggle();
-				$("#bright-slide").slider();
-				$("#bright-slide").on("slide", function(slideEvt) {
-				$("#brightSliderVal").text(slideEvt.value);
-				});
-				$("#contrast-slide").slider();
-				$("#contrast-slide").on("slide", function(slideEvt) {
-				$("#contrastSliderVal").text(slideEvt.value);
-				});
-				$("#color-slide").slider();
-				$("#color-slide").on("slide", function(slideEvt) {
-				$("#colorSliderVal").text(slideEvt.value);
-				});
 			});
 		});
 	</script>
@@ -251,14 +241,12 @@
 			</div>
 			<div class="settings">
 				<ul>
-				<li><a href="#">Brightness </a><input id="bright-slide" type="text" data-slider-min="-1" data-slider-max="10" data-slider-step="1" data-slider-value="3"/>
-				<span id="brightSliderVal">3</span>
+				<li><label>Brightness </label><input type="text" id="bright-slide">
 				</li>
-				<li><a href="#">Contrast</a><input id="contrast-slide" type="text" data-slider-min="-1" data-slider-max="10" data-slider-step="1" data-slider-value="4"/>
-				<span id="contrastSliderVal">4</span>
+				<li><label>Contrast</label><input type="text" id="contrast-slide">
 				</li>
-				<li><a href="#">Color</a><input id="color-slide" type="text" data-slider-min="-1" data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
-				<span id="colorSliderVal">5</span></li>
+				<li><label>Color</label><input type="type" id="color-slide">
+				</li>
 				</ul>
 			</div>
 
