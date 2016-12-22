@@ -19,6 +19,8 @@
 					var slider = new Slider('#contrast-slide');
 					var slider = new Slider('#color-slide');
 					function ProgChange(count){
+						$('.channel-img').show();
+						$('.channel').text(count);
 						switch(count){
 						case 17:
 						$('.channel-img').css("background-image","url(img/channel1.png)").css("background-repeat","no-repeat") .css("background-size","100%");
@@ -64,16 +66,13 @@
 				});
 				
 				$('.prog-up').click(function(){
-					$('.channel-img').show();
 					count++;
 					ProgChange(count);
-					$('.channel').text(count);
 				});
 				$('.prog-down').click(function(){
-					$('.channel-img').show();
 					count--;
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 
 				$('.vol-up').click(function() {
@@ -86,7 +85,7 @@
 					$('.volume').fadeIn() .css("background-color","#0000ff") .animate({width:'-=10px'}, 'fast',function(){
 								setTimeout(function() {
 	  				$('.volume').fadeOut('fast');}, 2000);
-					$('.speak').attr('src', 'img/speaker1.png');
+					//$('.speak').attr('src', 'img/speaker1.png');
 					});
 				});
 
@@ -97,55 +96,55 @@
 					count=17
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('#ch-nat').click(function(){
 					count=18
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('#ch-anime').click(function(){
 					count=19
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('#ch-hbo').click(function(){
 					count=16;
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('#ch-star-act').click(function(){
 					count=13;
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('#ch-rom').click(function(){
 					count=2;
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('#ch-mov').click(function(){
 					count=30;
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('#ch-dis').click(function(){
 					count=20;
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('#ch-pogo').click(function(){
 					count=21;
 					$('.menu').hide();
 					ProgChange(count);
-					$('.channel').text(count);
+					
 				});
 				$('.setting').click(function(){
 					$('.settings').toggle();

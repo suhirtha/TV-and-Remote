@@ -3,6 +3,7 @@ body{
 	background-size: 15%,30%,15%,cover;
 	background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
 	background-position: left bottom,bottom,right bottom,center;
+	/*background-attachment: scroll,scroll,scroll,fixed;*/
 }
 .wall-speak{
 	height: 100px;
